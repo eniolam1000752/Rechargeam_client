@@ -1,10 +1,22 @@
-import logo from "./logo.svg";
 import "./App.scss";
+import { Redirect, Route, Router, Switch } from "react-router";
+import { LandingPage } from "./screens/LandingPage/LandingPage";
+import { ROUTES } from "./lib/routes";
+import { createBrowserHistory } from "history";
 
 function App() {
+  const customHistory = createBrowserHistory();
+
   return (
-    <div className="App lightTheme">
-      <span>hey there</span>
+    <div className="app lightTheme">
+      <Router history={customHistory}>
+        <Switch>
+          <Route path={ROUTES.landingPage}>
+            <LandingPage />
+          </Route>
+          <Redirect to={ROUTES.landingPage} />
+        </Switch>
+      </Router>
     </div>
   );
 }

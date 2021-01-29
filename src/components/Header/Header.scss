@@ -1,0 +1,122 @@
+.header {
+  width: 100%;
+  background-color: var(--grey0-colors);
+  height: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  z-index: var(--header-z-index);
+
+  .header-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    .logo {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .header-logo ~ div {
+    flex-direction: row;
+    display: flex;
+    flex: 1;
+    // height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 30px;
+  }
+
+  .header-actions {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    align-self: center;
+    justify-content: flex-end;
+    height: 50px;
+    .action {
+      height: 100%;
+      margin-left: 8px;
+      margin-right: 8px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .action-link {
+        text-decoration: none;
+        color: var(--text-color);
+        span {
+          font-weight: 300;
+          font-size: 14px;
+          padding: 15px;
+        }
+      }
+
+      .action-link:hover {
+        color: var(--secondary-color) !important;
+      }
+    }
+
+    .auth-action {
+      width: fit-content;
+      height: 100%;
+      margin-left: 2px;
+      margin-right: 2px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .action-link {
+        text-decoration: none;
+        color: var(--text-color);
+        span {
+          font-weight: 300;
+          font-size: 14px;
+          padding: 15px;
+        }
+      }
+      .action-link:hover {
+        color: var(--secondary-color) !important;
+      }
+    }
+    .rounded-wrapper {
+      border-radius: 40px;
+      width: fit-content;
+      height: 36px;
+      background-color: var(--primary-color);
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      .action-link {
+        color: var(--white-color);
+        margin: 0px !important;
+      }
+      .action-link:hover {
+        color: var(--white-color) !important;
+      }
+    }
+    .rounded-wrapper:hover {
+      background-color: var(--secondary-color);
+    }
+
+    .divider-wrapper {
+      height: 100%;
+      width: 10px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+  }
+  .v-divider {
+    height: 20px;
+    width: 1px;
+    background-color: var(--dark-color);
+  }
+}
