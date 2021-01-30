@@ -1,0 +1,19 @@
+.title {
+  width: fit-content;
+  span {
+    font-family: "Comfortaa";
+    font-size: 30px;
+    font-weight: bold;
+  }
+  span ~ div {
+    width: 30%;
+    height: 4px;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    margin-top: 17px;
+    margin-left: 5px;
+  }
+  .underline-center {
+    width: 100%;
+  }
+}
