@@ -181,6 +181,11 @@
         margin-left: 90px;
         margin-right: 90px;
         margin-bottom: 100px;
+        transition: all linear 300ms;
+      }
+      img:hover {
+        transform: scale(1.2);
+        transition: all cubic-bezier(0.9, 0.36, 0.21, 1.65) 300ms;
       }
     }
   }

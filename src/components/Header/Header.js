@@ -1,4 +1,5 @@
 import "./Header.scss";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ROUTES } from "../../lib/routes";
 

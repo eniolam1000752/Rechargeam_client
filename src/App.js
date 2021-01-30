@@ -1,4 +1,5 @@
 import "./App.scss";
+import React from "react";
 import { Redirect, Route, Router, Switch } from "react-router";
 import { LandingPage } from "./screens/LandingPage/LandingPage";
 import { ROUTES } from "./lib/routes";

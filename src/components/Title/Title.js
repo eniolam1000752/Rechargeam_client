@@ -1,4 +1,5 @@
 import "./Title.scss";
+import React from "react";
 
 export function Title({ text, hasUnderline, align, children }) {
   return (
