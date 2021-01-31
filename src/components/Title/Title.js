@@ -3,7 +3,7 @@ import React from "react";
 
 export function Title({ text, hasUnderline, align, children }) {
   return (
-    <div className="title">
+    <div className={`title ${align === "right" ? "right" : "left"}`}>
       {text ? <span>{text}</span> : children}
       <div
         className={

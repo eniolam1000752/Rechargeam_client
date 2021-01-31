@@ -24,6 +24,16 @@
       position: absolute;
       right: -90px;
     }
+    .circle-2 {
+      width: 770px;
+      height: 770px;
+      background-color: var(--primary-color);
+      opacity: 0.03;
+      border-radius: 50%;
+      margin-top: 950px;
+      position: absolute;
+      left: -120px;
+    }
   }
   .section-0,
   .section-1 {
@@ -206,11 +216,12 @@
       padding-bottom: 20px;
       span {
         font-family: "Montserrat";
-        font-weight: 200;
+        font-weight: 300;
         font-size: 16px;
         width: 60%;
         text-align: center;
         line-height: 22px;
+        color: var(--text-color);
       }
     }
     .divider {
@@ -219,6 +230,112 @@
       background-color: var(--dark-color);
       opacity: 0.1;
     }
+  }
+  .retailer-pricing-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 70px;
+  }
+
+  .retailer-pricing-header + div,
+  .end-user-pricing-header + div {
+    padding-top: 50px;
+    padding-bottom: 120px;
+    span {
+      a {
+        font-weight: bold;
+        color: var(--primary-color);
+      }
+      margin-left: 70px;
+    }
+    .retailer-prices-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 50px;
+      flex-wrap: wrap;
+      span {
+        margin-left: unset;
+      }
+      .retailer-prices:hover {
+        transform: scale(1.05);
+        transition: all linear 250ms;
+      }
+      .retailer-prices {
+        width: 268px;
+        border-radius: 27.5px;
+        background-color: var(--white1-color);
+        box-shadow: 0px 13.7512px 183.35px -11.9177px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 28px;
+        margin-right: 28px;
+        position: relative;
+        padding-bottom: 30px;
+        transition: all linear 250ms;
+        margin-bottom: 30px;
+
+        .divider {
+          width: 80%;
+          height: 1px;
+          background-color: var(--dark-color);
+          opacity: 0.1;
+        }
+        .service-card-img {
+          position: absolute;
+          top: 75px;
+          background-color: var(--white-color);
+          img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+          }
+        }
+        .service-plans {
+          margin-top: 80px;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          .service-plan {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 17px;
+            span {
+              font-size: 13px;
+              font-weight: 400;
+            }
+          }
+          .button-wrapper {
+            margin-top: 30px;
+          }
+        }
+      }
+      .retailer-prices > div:first-child {
+        margin-top: 30px;
+        padding-bottom: 40px;
+      }
+      .retailer-prices > div:first-child span {
+        margin-left: unset;
+        font-weight: 600;
+        font-size: 18px;
+      }
+    }
+  }
+  .end-user-pricing-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 70px;
+    margin-top: 20px;
+  }
+  .end-user-pricing-header + div {
+    padding-top: 20px;
+    padding-bottom: 100px;
   }
   .our-partners-header {
     width: 100%;

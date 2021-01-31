@@ -1,5 +1,7 @@
 .title {
   width: fit-content;
+  display: flex;
+  flex-direction: column;
   span {
     font-family: "Comfortaa";
     font-size: 30px;
@@ -16,4 +18,10 @@
   .underline-center {
     width: 100%;
   }
+}
+.title.right {
+  align-items: flex-end;
+}
+.title.left {
+  align-items: flex-start;
 }

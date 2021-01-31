@@ -116,6 +116,9 @@ export function LandingPage({}) {
 
   const swiperRef = useRef(null);
   useEffect(() => {
+    const title = document?.querySelector("title");
+    title.innerHTML = "Welcome to Rechargeam";
+
     const interval = setInterval(() => swiperRef.current.slideNext(), 5000);
     return () => {
       clearInterval(interval);
@@ -129,6 +132,7 @@ export function LandingPage({}) {
         <div />
         <div>
           <div className="circle-1" />
+          <div className="circle-2" />
         </div>
       </div>
       <section>
@@ -276,12 +280,100 @@ export function LandingPage({}) {
       </section>
       <section>
         <div className="retailer-pricing-header">
-          <Title align="center" text="" />
+          <Title align="left" text="Reseller data pricing" />
+        </div>
+        <div>
+          <span>
+            <Link to="/signUp">Sign up</Link> as a reseller to enjoy these
+            special prices
+          </span>
+          <div className="retailer-prices-wrapper">
+            {[1, 2, 3, 4].map((item, index) => (
+              <div key={`retailer-prices_${index}`} className="retailer-prices">
+                <div>
+                  <span>MTN</span>
+                </div>
+                <div className="divider" />
+                <div className="service-card-img">
+                  <img src={mtn} />
+                </div>
+                <div className="service-plans">
+                  {[1, 2, 3, 4, 5, 6].map((item, index) => (
+                    <div key={`price_${index}`} className="service-plan">
+                      <span>
+                        <b>600</b>Mb &nbsp; --- &nbsp; <b>800</b>Mb
+                      </span>
+                    </div>
+                  ))}
+                  <div className="button-wrapper">
+                    <Button
+                      horizontalInsetPadding={70}
+                      verticalInsetPadding={16}
+                      isRounded={true}
+                      bgColor={"var(--primary-color)"}
+                    >
+                      <span
+                        style={{
+                          color: "var(--white-color)",
+                          fontFamily: "Comfortaa",
+                          fontWeight: 800,
+                        }}
+                      >
+                        Buy
+                      </span>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       <section>
         <div className="end-user-pricing-header">
-          <Title align="center" text="" />
+          <Title align="right" text="End user data pricing" />
+        </div>
+        <div>
+          <div className="retailer-prices-wrapper">
+            {[1, 2, 3, 4].map((item, index) => (
+              <div key={`retailer-prices_${index}`} className="retailer-prices">
+                <div>
+                  <span>MTN</span>
+                </div>
+                <div className="divider" />
+                <div className="service-card-img">
+                  <img src={mtn} />
+                </div>
+                <div className="service-plans">
+                  {[1, 2, 3, 4, 5, 6].map((item, index) => (
+                    <div key={`price_${index}`} className="service-plan">
+                      <span>
+                        <b>600</b>Mb &nbsp; --- &nbsp; <b>800</b>Mb
+                      </span>
+                    </div>
+                  ))}
+                  <div className="button-wrapper">
+                    <Button
+                      horizontalInsetPadding={70}
+                      verticalInsetPadding={16}
+                      isRounded={true}
+                      bgColor={"var(--primary-color)"}
+                    >
+                      <span
+                        style={{
+                          color: "var(--white-color)",
+                          fontFamily: "Comfortaa",
+                          fontWeight: 800,
+                        }}
+                      >
+                        Buy
+                      </span>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       <section>
