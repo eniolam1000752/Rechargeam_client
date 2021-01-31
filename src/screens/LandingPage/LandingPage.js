@@ -19,6 +19,9 @@ import glo from "../../assets/images/glo-logo.jpg";
 import gotv from "../../assets/images/gotv.png";
 import mtn from "../../assets/images/mtn.png";
 import phcn from "../../assets/images/phcn.jpeg";
+import airtimeImage from "../../assets/svgs/airtime_data_image.svg";
+import billsImage from "../../assets/svgs/billspayment_image.svg";
+import exchangeImage from "../../assets/svgs/exchange_image.svg";
 
 import "./LandingPage.scss";
 import "swiper/swiper.scss";
@@ -87,12 +90,36 @@ export function LandingPage({}) {
     { text: "Privacy terms and conditions", path: "/tandc" },
   ];
 
+  const servicesForYou = [
+    {
+      title: "Airtime and data recharge",
+      image: airtimeImage,
+      subText:
+        "Airtime and data topup for any of your favourite mobile operators",
+      path: "dashboard/buyAirtime",
+    },
+    {
+      title: "Exchange airtime for money",
+      image: exchangeImage,
+      subText:
+        "Airtime and data topup for any of your favourite mobile operators",
+      path: "dashboard/Exchange",
+    },
+    {
+      title: "Bills payment",
+      image: billsImage,
+      subText:
+        "Airtime and data topup for any of your favourite mobile operators",
+      path: "dashboard/bills",
+    },
+  ];
+
   const swiperRef = useRef(null);
   useEffect(() => {
-    // const interval = setInterval(() => swiperRef.current.slideNext(), 5000);
-    // return () => {
-    //   clearInterval(interval);
-    // };
+    const interval = setInterval(() => swiperRef.current.slideNext(), 5000);
+    return () => {
+      clearInterval(interval);
+    };
   });
 
   return (
@@ -204,7 +231,48 @@ export function LandingPage({}) {
         <div className="services-header">
           <Title align="center" text="Services just for you" />
         </div>
-        <div></div>
+        <div>
+          {servicesForYou.map((item, index) => (
+            <div
+              className="service-card"
+              key={`servcies_${index}`}
+              style={{ transform: index === 1 ? "scale(1.16)" : null }}
+            >
+              <div>
+                <span>{item.title}</span>
+              </div>
+              <div className="divider" />
+              <div className="service-card-img">
+                <img src={item.image} />
+              </div>
+              <div>
+                <span>{item.subText}</span>
+              </div>
+              <div>
+                <Button
+                  horizontalInsetPadding={50}
+                  verticalInsetPadding={16}
+                  isRounded={true}
+                  bgColor={
+                    index === 1
+                      ? "var(--secondary-color) "
+                      : "var(--primary-color)"
+                  }
+                >
+                  <span
+                    style={{
+                      color: "var(--white-color)",
+                      fontFamily: "Comfortaa",
+                      fontWeight: 800,
+                    }}
+                  >
+                    Exchange
+                  </span>
+                </Button>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
       <section>
         <div className="retailer-pricing-header">
