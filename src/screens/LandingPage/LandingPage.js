@@ -33,7 +33,7 @@ import { Button } from "../../components/Button/Button";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
-export function LandingPage({}) {
+export function LandingPage() {
   const headerActions = [
     { title: "Home", path: "/home" },
     { title: "Services", path: "/services" },
@@ -116,8 +116,8 @@ export function LandingPage({}) {
 
   const swiperRef = useRef(null);
   useEffect(() => {
-    const title = document?.querySelector("title");
-    title.innerHTML = "Welcome to Rechargeam";
+    // const title = document?.querySelector("title");
+    // title.innerHTML = "Welcome to Rechargeam";
 
     const interval = setInterval(() => swiperRef.current.slideNext(), 5000);
     return () => {
