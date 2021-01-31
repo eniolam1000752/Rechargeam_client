@@ -11,6 +11,7 @@ export function Button({
   insetPadding,
   horizontalInsetPadding,
   verticalInsetPadding,
+  horizontalMargin,
 }) {
   const [showTransparent, setShowTransparent] = useState(false);
   return (
@@ -29,6 +30,8 @@ export function Button({
           paddingTop: insetPadding || verticalInsetPadding,
           paddingBottom: insetPadding || verticalInsetPadding,
           opacity: showTransparent && 0.4,
+          marginLeft: horizontalMargin,
+          marginRight: horizontalMargin,
         }}
       >
         {text ? (

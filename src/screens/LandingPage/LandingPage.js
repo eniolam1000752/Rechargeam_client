@@ -419,6 +419,38 @@ export function LandingPage() {
       <section>
         <div className="footer-wrapper">
           <div className="left-content">
+            <div className="social-button-wrapper">
+              <Button
+                isRounded
+                horizontalInsetPadding={13}
+                bgColor="rgba(255,255,255,0.2)"
+              >
+                <i className="fab fa-facebook-f" />
+              </Button>
+              <Button
+                isRounded
+                horizontalInsetPadding={10}
+                bgColor="rgba(255,255,255,0.2)"
+                horizontalMargin={10}
+              >
+                <i className="fab fa-instagram" />
+              </Button>
+              <Button
+                isRounded
+                horizontalInsetPadding={10}
+                bgColor="rgba(255,255,255,0.2)"
+              >
+                <i className="fab fa-twitter" />
+              </Button>
+              <Button
+                isRounded
+                horizontalInsetPadding={11}
+                bgColor="rgba(255,255,255,0.2)"
+                horizontalMargin={10}
+              >
+                <i className="fab fa-linkedin-in" />
+              </Button>
+            </div>
             {footerLinks.map((item, index) => (
               <div key={`footer_link_${index}`} className="footer-link">
                 <Link to={item.path}>
