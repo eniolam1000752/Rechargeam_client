@@ -26,6 +26,7 @@ import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
 import { Link } from "react-router-dom";
+import { Button } from "../../components/Button/Button";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -79,12 +80,19 @@ export function LandingPage({}) {
     { name: "dstv", image: dstv },
   ];
 
+  const footerLinks = [
+    { text: "About us", path: "/aboutUs" },
+    { text: "Chat Us - 08100496945", path: "/#" },
+    { text: "FAQ", path: "/faq" },
+    { text: "Privacy terms and conditions", path: "/tandc" },
+  ];
+
   const swiperRef = useRef(null);
   useEffect(() => {
-    const interval = setInterval(() => swiperRef.current.slideNext(), 5000);
-    return () => {
-      clearInterval(interval);
-    };
+    // const interval = setInterval(() => swiperRef.current.slideNext(), 5000);
+    // return () => {
+    //   clearInterval(interval);
+    // };
   });
 
   return (
@@ -100,6 +108,20 @@ export function LandingPage({}) {
         <div className="section-0">
           <div className="illustration-text-wrapper">
             <div>
+              <div className="quick-buy-section">
+                <Button
+                  onPress={() => {}}
+                  bgColor="var(--primary-color)"
+                  isRounded={true}
+                  insetPadding={17}
+                >
+                  <div>
+                    <i className="fas fa-shopping-cart"></i>
+                    <span>Quick Buy</span>
+                  </div>
+                </Button>
+              </div>
+
               <Title>
                 <span>
                   Welcome to{" "}
@@ -138,6 +160,19 @@ export function LandingPage({}) {
           </div>
           <div className="illustration-text-wrapper">
             <div>
+              <div className="quick-buy-section">
+                <Button
+                  onPress={() => {}}
+                  bgColor="var(--secondary-color)"
+                  isRounded={true}
+                  insetPadding={17}
+                >
+                  <div>
+                    <i className="fas fa-shopping-cart"></i>
+                    <span>Get Buying</span>
+                  </div>
+                </Button>
+              </div>
               <Title text="Just a Click away" />
               <div className="swiper-content">
                 <span className="slider-text">
@@ -194,6 +229,57 @@ export function LandingPage({}) {
             {partners.map((item, index) => (
               <img key={`partner_${index}`} src={item.image} alt={item.name} />
             ))}
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="ready-to-get-started">
+          <div>
+            <span className="title">Ready to get Started ?</span>
+            <br />
+            <span>Create a free account or get in touch</span>
+          </div>
+          <div>
+            <Button
+              text="Get Started"
+              bgColor="var(--primary-color)"
+              verticalInsetPadding={15}
+              horizontalInsetPadding={50}
+            />
+            <div style={{ width: 100 }} />
+            <Button
+              text="Get in touch"
+              bgColor="var(--red-color)"
+              verticalInsetPadding={15}
+              horizontalInsetPadding={50}
+            />
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="footer-wrapper">
+          <div className="left-content">
+            {footerLinks.map((item, index) => (
+              <div key={`footer_link_${index}`} className="footer-link">
+                <Link to={item.path}>
+                  <span>{item.text}</span>
+                </Link>
+              </div>
+            ))}
+          </div>
+          <div className="right-content">
+            <div>
+              <span>Support email</span>
+              <div>
+                <span>support@rechargeam.com</span>
+              </div>
+            </div>
+            <div>
+              <span>Address</span>
+              <div>
+                <span>40B, Commercial Avenue, Sabo-Yaba, Lagos.</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
