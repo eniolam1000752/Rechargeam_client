@@ -141,6 +141,7 @@ export function LandingPage() {
             <div>
               <div className="quick-buy-section">
                 <Button
+                  link="/product/quickBuy"
                   onPress={() => {}}
                   bgColor="var(--primary-color)"
                   isRounded={true}
@@ -193,6 +194,7 @@ export function LandingPage() {
             <div>
               <div className="quick-buy-section">
                 <Button
+                  href="#end-user"
                   onPress={() => {}}
                   bgColor="var(--secondary-color)"
                   isRounded={true}
@@ -330,7 +332,7 @@ export function LandingPage() {
         </div>
       </section>
       <section>
-        <div className="end-user-pricing-header">
+        <div id="end-user" className="end-user-pricing-header">
           <Title align="right" text="End user data pricing" />
         </div>
         <div>
@@ -422,6 +424,7 @@ export function LandingPage() {
             <div className="social-button-wrapper">
               <Button
                 isRounded
+                link={"/fb"}
                 horizontalInsetPadding={13}
                 bgColor="rgba(255,255,255,0.2)"
               >
@@ -429,6 +432,7 @@ export function LandingPage() {
               </Button>
               <Button
                 isRounded
+                link={"/fb"}
                 horizontalInsetPadding={10}
                 bgColor="rgba(255,255,255,0.2)"
                 horizontalMargin={10}
@@ -437,6 +441,7 @@ export function LandingPage() {
               </Button>
               <Button
                 isRounded
+                link={"/fb"}
                 horizontalInsetPadding={10}
                 bgColor="rgba(255,255,255,0.2)"
               >
@@ -444,6 +449,7 @@ export function LandingPage() {
               </Button>
               <Button
                 isRounded
+                link={"/fb"}
                 horizontalInsetPadding={11}
                 bgColor="rgba(255,255,255,0.2)"
                 horizontalMargin={10}

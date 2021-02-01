@@ -1,7 +1,6 @@
 import "./Header.scss";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ROUTES } from "../../lib/routes";
 
 export function Header({ logo, hasAuth, shouldStick, actions }) {
   const location = useLocation();
