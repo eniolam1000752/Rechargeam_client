@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
@@ -28,15 +28,16 @@ import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "../../components/Button/Button";
+import { Drawer } from "../../components/Drawer/Drawer";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 export function LandingPage() {
   const headerActions = [
     { title: "Home", path: "/home" },
-    { title: "Services", path: "/services" },
+    { title: "Services", href: "/#services" },
     { title: "AboutUs", path: "/aboutus" },
     { title: "Reviews", path: "/reviews" },
   ];
@@ -115,15 +116,24 @@ export function LandingPage() {
   ];
 
   const swiperRef = useRef(null);
-  useEffect(() => {
-    // const title = document?.querySelector("title");
-    // title.innerHTML = "Welcome to Rechargeam";
+  const location = useLocation();
+  const [showDawer, setShowDrawer] = useState(false);
 
+  //@init()
+  const onMount = () => {
     const interval = setInterval(() => swiperRef.current.slideNext(), 5000);
     return () => {
       clearInterval(interval);
     };
-  });
+  };
+
+  useEffect(() => {
+    setShowDrawer(
+      location.pathname === "/signUp" || location.pathname === "/login"
+    );
+
+    console.log(location);
+  }, [location]);
 
   return (
     <div className="landing-page">
@@ -135,6 +145,8 @@ export function LandingPage() {
           <div className="circle-2" />
         </div>
       </div>
+
+      {/* <Drawer show={true} /> */}
       <section>
         <div className="section-0">
           <div className="illustration-text-wrapper">
@@ -233,7 +245,7 @@ export function LandingPage() {
           ))}
         </div>
       </section>
-      <section>
+      <section id="services">
         <div className="services-header">
           <Title align="center" text="Services just for you" />
         </div>

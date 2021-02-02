@@ -6,11 +6,13 @@ export function Header({ logo, hasAuth, shouldStick, actions }) {
   const location = useLocation();
   const [isFixed, setisFixed] = useState(false);
 
-  useEffect(() => {
+  //@init()
+  const onMount = () => {
     document.querySelector("body").onscroll = (event) => {
       setisFixed(document.querySelector("html").scrollTop >= 2);
     };
-  }, []);
+  };
+
   return (
     <>
       {isFixed ? <div className="fake-header" /> : null}
@@ -22,25 +24,49 @@ export function Header({ logo, hasAuth, shouldStick, actions }) {
           <div className="header-actions">
             {actions.map((item, index) => (
               <div key={`header-action-${index}`} className="action">
-                <Link
-                  className="action-link"
-                  to={item.path}
-                  style={{
-                    fontWeight: location.pathname === item.path ? "600" : "300",
-                  }}
-                >
-                  <span
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    className="action-link"
                     style={{
                       fontWeight:
                         location.pathname === item.path ? "600" : "300",
-                      color:
-                        location.pathname === item.path &&
-                        "var(--primary-color)",
                     }}
                   >
-                    {item.title}
-                  </span>
-                </Link>
+                    <span
+                      style={{
+                        fontWeight:
+                          location.pathname === item.path ? "600" : "300",
+                        color:
+                          location.pathname === item.path &&
+                          "var(--primary-color)",
+                      }}
+                    >
+                      {item.title}
+                    </span>
+                  </a>
+                ) : (
+                  <Link
+                    className="action-link"
+                    to={item.path}
+                    style={{
+                      fontWeight:
+                        location.pathname === item.path ? "600" : "300",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontWeight:
+                          location.pathname === item.path ? "600" : "300",
+                        color:
+                          location.pathname === item.path &&
+                          "var(--primary-color)",
+                      }}
+                    >
+                      {item.title}
+                    </span>
+                  </Link>
+                )}
               </div>
             ))}
             <div className="divider-wrapper">

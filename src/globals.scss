@@ -1,4 +1,9 @@
+@mixin z-indexes {
+  --drawer-zindex: 20;
+}
+
 .lightTheme {
+  @include z-indexes();
   --primary-color: #2280fa;
   --secondary-color: #bb6bd9;
   --white-color: white;
@@ -7,10 +12,12 @@
   --text-color: #000;
   --grey0-colors: #f8f8f8;
   --red-color: #eb5757;
+  --backlay-color: rgba(0, 0, 0, 0.2);
   --header-z-index: 5;
 }
 
 .darkTheme {
+  @include z-indexes();
   --primary-color: white;
   --secondary-color: white;
   --white-color: white;
