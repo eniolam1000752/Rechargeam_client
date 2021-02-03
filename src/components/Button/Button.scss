@@ -6,6 +6,7 @@
     border: 0px solid transparent;
     transition: all linear 200ms;
     cursor: pointer;
+    width: fit-content;
   }
   .btn:hover {
     box-shadow: 1px 5px 40px rgba(0, 0, 0, 0.1);

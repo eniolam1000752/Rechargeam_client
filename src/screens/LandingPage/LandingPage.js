@@ -28,9 +28,11 @@ import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { Button } from "../../components/Button/Button";
 import { Drawer } from "../../components/Drawer/Drawer";
+import { SignIn } from "../SignIn/SignIn";
+import { SignUp } from "../SignUp/SignUp";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -117,6 +119,7 @@ export function LandingPage() {
 
   const swiperRef = useRef(null);
   const location = useLocation();
+  const history = useHistory();
   const [showDawer, setShowDrawer] = useState(false);
 
   //@init()
@@ -129,7 +132,9 @@ export function LandingPage() {
 
   useEffect(() => {
     setShowDrawer(
-      location.pathname === "/signUp" || location.pathname === "/login"
+      location.pathname === "/signUp" ||
+        location.pathname === "/login" ||
+        location.pathname === "/forgetPassword"
     );
 
     console.log(location);
@@ -146,7 +151,18 @@ export function LandingPage() {
         </div>
       </div>
 
-      {/* <Drawer show={true} /> */}
+      <Drawer
+        show={showDawer}
+        onDismiss={() => {
+          history.replace("/home");
+        }}
+      >
+        {location.pathname === "/login" ? (
+          <SignIn />
+        ) : location.pathname === "/signUp" ? (
+          <SignUp />
+        ) : null}
+      </Drawer>
       <section>
         <div className="section-0">
           <div className="illustration-text-wrapper">

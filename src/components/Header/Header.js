@@ -1,5 +1,5 @@
 import "./Header.scss";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 export function Header({ logo, hasAuth, shouldStick, actions }) {
