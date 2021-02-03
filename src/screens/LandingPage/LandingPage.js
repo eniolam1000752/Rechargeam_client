@@ -33,6 +33,7 @@ import { Button } from "../../components/Button/Button";
 import { Drawer } from "../../components/Drawer/Drawer";
 import { SignIn } from "../SignIn/SignIn";
 import { SignUp } from "../SignUp/SignUp";
+import { ForgotPassword } from "../ForgotPassword/ForgotPassword";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -134,7 +135,7 @@ export function LandingPage() {
     setShowDrawer(
       location.pathname === "/signUp" ||
         location.pathname === "/login" ||
-        location.pathname === "/forgetPassword"
+        location.pathname === "/forgotPassword"
     );
 
     console.log(location);
@@ -161,6 +162,8 @@ export function LandingPage() {
           <SignIn />
         ) : location.pathname === "/signUp" ? (
           <SignUp />
+        ) : location.pathname === "/forgotPassword" ? (
+          <ForgotPassword />
         ) : null}
       </Drawer>
       <section>

@@ -37,7 +37,7 @@ export function SignUp({}) {
         />
         <InputText
           value={state.phone}
-          placeholder="Phone Number"
+          placeholder="(+234) Phone Number"
           onChangeText={(phone) => {
             dispatch({ phone });
           }}
