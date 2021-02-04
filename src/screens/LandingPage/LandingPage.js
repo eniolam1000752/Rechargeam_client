@@ -125,10 +125,10 @@ export function LandingPage() {
 
   //@init()
   const onMount = () => {
-    const interval = setInterval(() => swiperRef.current.slideNext(), 5000);
-    return () => {
-      clearInterval(interval);
-    };
+    // const interval = setInterval(() => swiperRef.current.slideNext(), 5000);
+    // return () => {
+    //   clearInterval(interval);
+    // };
   };
 
   useEffect(() => {
@@ -218,12 +218,12 @@ export function LandingPage() {
       </section>
       <section>
         <div className="section-1">
-          <div className="illustration-image-wrapper">
+          <div className="illustration-image-wrapper second-section">
             <img src={justAClickAway} />
           </div>
           <div className="illustration-text-wrapper">
             <div>
-              <div className="quick-buy-section">
+              <div className="quick-buy-section second-section">
                 <Button
                   href="#end-user"
                   onPress={() => {}}
@@ -316,7 +316,7 @@ export function LandingPage() {
           <Title align="left" text="Reseller data pricing" />
         </div>
         <div>
-          <span>
+          <span className = 'reseller-description-text'>
             <Link to="/signUp">Sign up</Link> as a reseller to enjoy these
             special prices
           </span>

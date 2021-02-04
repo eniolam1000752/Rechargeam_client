@@ -13,7 +13,7 @@
     border-radius: 20px;
     background-color: var(--primary-color);
     margin-top: 17px;
-    margin-left: 5px;
+    margin-left: 0px;
   }
   .underline-center {
     width: 100%;
@@ -24,4 +24,15 @@
 }
 .title.left {
   align-items: flex-start;
+}
+
+@media only screen and (max-width: 420px) {
+  .title {
+    span {
+      font-size: 22px !important;
+    }
+    span ~ div {
+      height: 2px !important;
+    }
+  }
 }

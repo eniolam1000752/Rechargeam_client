@@ -1,5 +1,6 @@
 .landing-page {
   width: 100%;
+  position: relative;
   .background-layer {
     width: 100%;
     position: absolute;
@@ -129,7 +130,8 @@
     flex-direction: row;
     justify-content: center;
     margin-top: 150px;
-    margin-bottom: 120px;
+    margin-bottom: 70px;
+    flex-wrap: wrap;
     .description {
       width: 240px;
       padding-left: 10px;
@@ -140,6 +142,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      margin-bottom: 50px;
       img ~ span {
         text-align: center;
         margin-top: 30px;
@@ -472,6 +475,112 @@
     .right-content > div > span:first-child {
       font-weight: 600;
       margin-bottom: 2px;
+    }
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .landing-page {
+    .illustration-text-wrapper {
+      left: 0px !important;
+    }
+    .illustration-text-wrapper > div {
+      transform: scale(0.87) !important;
+    }
+    .illustration-image-wrapper {
+      z-index: -2 !important;
+      opacity: 0.3;
+    }
+    .illustration-image-wrapper.second-section {
+      display: none;
+    }
+    .section-1 {
+      transform: translateY(-170px) !important;
+    }
+    .quick-buy-section.second-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      width: 100% !important;
+      transform: translateX(30px) !important;
+    }
+    .section-0 {
+      margin-top: -10px !important;
+    }
+    .swiper-content {
+      margin-left: 0px !important;
+      width: 380px !important;
+    }
+    .descriptions-wrapper {
+      margin-top: -80px !important;
+      transform: scale(0.9) !important;
+    }
+    .services-header ~ div {
+      padding-top: 30px !important;
+      padding-bottom: 60px !important;
+      .service-card {
+        transform: scale(0.9) !important;
+      }
+    }
+    .retailer-pricing-header {
+      padding-left: 20px;
+    }
+    .retailer-pricing-header ~ div .reseller-description-text {
+      margin-left: 0px;
+      font-size: 12px;
+      padding-left: 30px;
+    }
+    .retailer-pricing-header ~ div {
+      padding-top: 30px !important;
+      padding-bottom: 50px !important;
+    }
+    .retailer-pricing-header ~ div span ~ div {
+      margin-top: 35px !important;
+    }
+    .end-user-pricing-header {
+      padding-right: 28px !important;
+    }
+    .partners-content {
+      padding: 0px !important;
+      span {
+        width: 80% !important;
+        font-size: 12px !important;
+      }
+      .partners-wrapper img {
+        margin-right: 40px !important;
+        margin-left: 40px !important;
+      }
+    }
+    .ready-to-get-started > div:first-child {
+      transform: scale(0.9) !important;
+    }
+    .ready-to-get-started > div:first-child ~ div {
+      flex-wrap: wrap;
+      button {
+        padding: 14px !important;
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+    .left-content {
+      padding-left: 0px !important;
+    }
+    .right-content {
+    }
+    .right-content > div:first-child div {
+      span {
+        font-size: 10px !important;
+        text-align: right !important;
+      }
+    }
+    .right-content > div:first-child ~ div div {
+      display: flex;
+
+      span {
+        transform: scale(0.8) translateX(25px) !important ;
+        text-align: right !important;
+      }
     }
   }
 }
