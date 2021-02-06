@@ -316,7 +316,7 @@ export function LandingPage() {
           <Title align="left" text="Reseller data pricing" />
         </div>
         <div>
-          <span className = 'reseller-description-text'>
+          <span className="reseller-description-text">
             <Link to="/signUp">Sign up</Link> as a reseller to enjoy these
             special prices
           </span>
