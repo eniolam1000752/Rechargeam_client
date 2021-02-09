@@ -23,6 +23,8 @@ export function Button({
       onClick={onPress || (() => {})}
       onMouseDown={() => setShowTransparent(true)}
       onMouseUp={() => setShowTransparent(false)}
+      onMouseLeave={() => setShowTransparent(false)}
+      onMouseOut={() => setShowTransparent(false)}
     >
       {link ? (
         <Link

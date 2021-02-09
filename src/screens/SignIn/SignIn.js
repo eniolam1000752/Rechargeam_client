@@ -42,6 +42,7 @@ export function SignIn({}) {
         <div style={{ height: 60 }} />
         <Button
           text="Login"
+          link="/dashboard"
           horizontalInsetPadding={30}
           verticalInsetPadding={14}
         />
