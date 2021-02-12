@@ -1,0 +1,23 @@
+.airtime-screen-wrapper {
+  width: 100%;
+  padding: 10px;
+  .my-wallet-section {
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 20px;
+  }
+  .form-section {
+    width: 100%;
+    padding-left: 30px;
+    margin-top: -20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    .input-section {
+      min-width: 300px;
+      width: 40%;
+    }
+  }
+}

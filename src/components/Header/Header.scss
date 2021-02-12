@@ -139,6 +139,31 @@
     width: 1px;
     background-color: var(--dark-color);
   }
+  .profile-avatar-wrapper {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 5px;
+    font-size: 12px;
+    .profile-text-wrapper > span:first-child {
+      font-weight: 700;
+    }
+    .profile-text-wrapper > span:first-child ~ div > span {
+      opacity: 0.7;
+    }
+    .profile-text-wrapper > span:first-child ~ div {
+      margin-top: 3px;
+    }
+    img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      margin-left: 20px;
+      box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
+    }
+  }
 }
 
 .popover-menu-wrapper {

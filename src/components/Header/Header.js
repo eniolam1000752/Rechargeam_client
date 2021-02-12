@@ -4,6 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "../Button/Button";
 import { Popover } from "../Popover/Popover";
 
+import eniola from "../../assets/images/eni 2.png";
+
 export function Header({ logo, hasAuth, shouldStick, actions, forDashboard }) {
   const location = useLocation();
 
@@ -260,7 +262,15 @@ export function Header({ logo, hasAuth, shouldStick, actions, forDashboard }) {
                 </div>
               </>
             ) : (
-              <div></div>
+              <div className="profile-avatar-wrapper">
+                <div className="profile-text-wrapper">
+                  <span>kjksjdfsf</span>
+                  <div>
+                    <span>sfadfadfadfadfafaef</span>
+                  </div>
+                </div>
+                <img src={eniola} />
+              </div>
             )}
           </div>
         </div>

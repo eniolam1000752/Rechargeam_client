@@ -1,5 +1,7 @@
 import React from "react";
 import { Layout } from "../../components/Layout/Layout";
+import { DashbaordScreen } from "./DashboardScreen";
+import { AirtimeScreen } from "../Airtime/Airtime";
 
 export function Dashboard() {
   return (
@@ -7,13 +9,13 @@ export function Dashboard() {
       routes={[
         {
           path: "/dashboard",
-          component: <span>dashboard</span>,
+          component: <DashbaordScreen />,
           text: "Dashboard",
           icon: "fa fa-home",
         },
         {
           path: "/dashboard/airtime",
-          component: <span> airtime</span>,
+          component: <AirtimeScreen />,
           text: "Airtime",
           icon: "fa  fa-mobile",
         },

@@ -14,6 +14,8 @@
   --text-color: #000;
   --grey0-colors: #f8f8f8;
   --grey1-color: #f5f5f5;
+  --grey5-color: #e0e0e0;
+  --grey2-color: #4f4f4f;
   --red-color: #eb5757;
   --backlay-color: rgba(0, 0, 0, 0.5);
   --header-z-index: 5;
@@ -26,4 +28,20 @@
   --white-color: white;
   --dark-color: white;
   --text-color: text;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .col6 {
+    width: 50%;
+  }
+  .col2 {
+    width: calc(100% / 6);
+  }
+  .col10 {
+    width: calc(100% * 5 / 6);
+  }
 }

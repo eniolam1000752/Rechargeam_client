@@ -11,6 +11,7 @@
   .btn:hover {
     box-shadow: 1px 5px 40px rgba(0, 0, 0, 0.1);
   }
+
   .rounded {
     border-radius: 100px;
     display: flex;
@@ -19,5 +20,11 @@
   }
   .flat {
     border-radius: 3px;
+  }
+}
+
+.button.no-elevation {
+  .btn:hover {
+    box-shadow: unset !important;
   }
 }

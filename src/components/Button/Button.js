@@ -15,11 +15,12 @@ export function Button({
   horizontalInsetPadding,
   verticalInsetPadding,
   horizontalMargin,
+  noElevation,
 }) {
   const [showTransparent, setShowTransparent] = useState(false);
   return (
     <div
-      className="button"
+      className={`button ${noElevation ? "no-elevation" : ""}`}
       onClick={onPress || (() => {})}
       onMouseDown={() => setShowTransparent(true)}
       onMouseUp={() => setShowTransparent(false)}
