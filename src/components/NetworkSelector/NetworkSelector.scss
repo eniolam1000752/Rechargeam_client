@@ -1,0 +1,37 @@
+.network-selector > div:first-child {
+  margin-bottom: 10px;
+}
+.network-selector {
+  .network-selector-wrapper {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .network {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .network-image {
+        width: 60px;
+        height: 60px;
+        border: 2px solid var(--primary-color);
+        border-radius: 50%;
+        margin-left: 10px;
+        margin-right: 10px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .network-title {
+        margin-top: 8px;
+        font-size: 12px;
+        font-weight: 300;
+      }
+      .network-image img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+}

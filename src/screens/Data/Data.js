@@ -3,9 +3,9 @@ import { Button } from "../../components/Button/Button";
 import { InputText } from "../../components/InputText/InputText";
 import { NetworkSelector } from "../../components/NetworkSelector/NetworkSelector";
 import { Wallet } from "../../components/Wallet/Wallet";
-import "./Airtime.scss";
+import "./Data.scss";
 
-export function AirtimeScreen({}) {
+export function DataScreen({}) {
   return (
     <div className="airtime-screen-wrapper">
       <div className="my-wallet-section">
@@ -16,7 +16,6 @@ export function AirtimeScreen({}) {
         <div className="input-section">
           <InputText placeholder="Enter phone number" />
           <div style={{ margin: 40 }} />
-          <InputText placeholder="Enter amount here" />
           <div style={{ margin: 40 }} />
           <InputText placeholder="Enter description" />
           <div style={{ margin: 60 }} />

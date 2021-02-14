@@ -2,6 +2,8 @@ import React from "react";
 import { Layout } from "../../components/Layout/Layout";
 import { DashbaordScreen } from "./DashboardScreen";
 import { AirtimeScreen } from "../Airtime/Airtime";
+import { DataScreen } from "../Data/Data";
+import { TransactionScreen } from "../Transactions/Transaction";
 
 export function Dashboard() {
   return (
@@ -21,13 +23,13 @@ export function Dashboard() {
         },
         {
           path: "/dashboard/data",
-          component: <span> data</span>,
+          component: <DataScreen />,
           text: "Data",
           icon: "fa fa-sim-card",
         },
         {
           path: "/dashboard/transactions",
-          component: <span> transactions</span>,
+          component: <TransactionScreen />,
           text: "Transactions",
           icon: "fa fa-exchange-alt",
         },

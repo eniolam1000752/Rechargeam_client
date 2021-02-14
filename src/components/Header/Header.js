@@ -144,9 +144,9 @@ export function Header({ logo, hasAuth, shouldStick, actions, forDashboard }) {
             : undefined,
         }}
       >
-        <div className="header-logo">
+        <Link className="header-logo" to="/">
           <img src={logo} className="logo" />
-        </div>
+        </Link>
         <span style={{ marginTop: 6 }}> echargeam</span>
         <div>
           <div className="header-menu-button">
