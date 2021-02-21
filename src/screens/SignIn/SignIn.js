@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Button } from "../../components/Button/Button";
 import { InputText } from "../../components/InputText/InputText";
 import { Title } from "../../components/Title/Title";
@@ -7,7 +7,9 @@ import { useController } from "./SignIn.controller";
 import "./SignIn.scss";
 
 export function SignIn({}) {
-  const { state, dispatch } = useController();
+  const history = useHistory();
+  const { state, dispatch, onLogin } = useController(history);
+
   return (
     <div className="sign-in">
       <div className="header-title-wrapper">
@@ -39,12 +41,15 @@ export function SignIn({}) {
         <Link className="forget-password-link" to="forgotPassword">
           <b>Forgot Password</b>
         </Link>
-        <div style={{ height: 60 }} />
+        <div style={{ height: 30 }} />
+        <span className="error-msg">{state.errorMsg}</span>
+        <div style={{ height: 10 }} />
         <Button
-          text="Login"
-          link="/dashboard"
+          text={"Login"}
+          isLoading={state.isLoading}
           horizontalInsetPadding={30}
           verticalInsetPadding={14}
+          onPress={onLogin}
         />
         <div style={{ height: 60 }} />
       </div>

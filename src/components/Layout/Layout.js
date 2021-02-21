@@ -40,20 +40,40 @@ export function Layout({ routes }) {
             </Button>
           </div>
           <div className="content-wrapper">
-            {routes.map((item, index) => (
-              <Link
-                key={`links_${index}`}
-                className={`link ${
-                  location.pathname === item.path ? "visited" : ""
-                } ${collapseLeftPane ? "only-icon" : ""}`}
-                to={item.path}
-              >
-                <div className="link-icon">
-                  <i className={item.icon} />
+            {routes.map((item, index) =>
+              item.onClick ? (
+                <div
+                  key={`links_${index}`}
+                  className={`link ${
+                    location.pathname === item.path ? "visited" : ""
+                  } ${collapseLeftPane ? "only-icon" : ""}`}
+                  style={{
+                    cursor: "pointer",
+                    background: "transparent",
+                    borderWidth: 0,
+                  }}
+                  onClick={item.onClick}
+                >
+                  <div className="link-icon">
+                    <i className={item.icon} />
+                  </div>
+                  {!collapseLeftPane && <span to="#">{item.text}</span>}
                 </div>
-                {!collapseLeftPane && <span to="#">{item.text}</span>}
-              </Link>
-            ))}
+              ) : (
+                <Link
+                  key={`links_${index}`}
+                  className={`link ${
+                    location.pathname === item.path ? "visited" : ""
+                  } ${collapseLeftPane ? "only-icon" : ""}`}
+                  to={item.path}
+                >
+                  <div className="link-icon">
+                    <i className={item.icon} />
+                  </div>
+                  {!collapseLeftPane && <span to="#">{item.text}</span>}
+                </Link>
+              )
+            )}
           </div>
         </div>
         <div className="right-pane">

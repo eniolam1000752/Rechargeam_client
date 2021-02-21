@@ -1,4 +1,13 @@
 .button {
+  .fa-spinner {
+    font-size: 19px;
+    color: var(--white-color);
+    animation-name: spinner-anime;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
   .btn {
     padding: 10px;
     background-color: var(--primary-color);
@@ -26,5 +35,17 @@
 .button.no-elevation {
   .btn:hover {
     box-shadow: unset !important;
+  }
+}
+
+@keyframes spinner-anime {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  0% {
+    transform: rotate(0deg);
   }
 }

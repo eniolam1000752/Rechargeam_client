@@ -4,8 +4,14 @@ import { DashbaordScreen } from "./DashboardScreen";
 import { AirtimeScreen } from "../Airtime/Airtime";
 import { DataScreen } from "../Data/Data";
 import { TransactionScreen } from "../Transactions/Transaction";
+import { globals } from "../../lib/globals";
+import { useHistory } from "react-router";
 
 export function Dashboard() {
+  const history = useHistory();
+
+  if (!globals.token) history.replace("/login");
+
   return (
     <Layout
       routes={[
@@ -40,7 +46,11 @@ export function Dashboard() {
           icon: "fa fa-user-cog",
         },
         {
-          path: "/dashboard/logout",
+          onClick: () => {
+            globals.token = null;
+            localStorage.removeItem("token");
+            history.replace("/home");
+          },
           component: <span> Logout</span>,
           text: "Logout",
           icon: "fa fa-power-off",

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
@@ -34,6 +34,8 @@ import { Drawer } from "../../components/Drawer/Drawer";
 import { SignIn } from "../SignIn/SignIn";
 import { SignUp } from "../SignUp/SignUp";
 import { ForgotPassword } from "../ForgotPassword/ForgotPassword";
+import { useController } from "./LandingPage.controller";
+import { globals } from "../../lib/globals";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -122,14 +124,23 @@ export function LandingPage() {
   const location = useLocation();
   const history = useHistory();
   const [showDawer, setShowDrawer] = useState(false);
+  const { state, dispatch } = useController();
 
-  //@init()
-  const onMount = () => {
-    // const interval = setInterval(() => swiperRef.current.slideNext(), 5000);
-    // return () => {
-    //   clearInterval(interval);
-    // };
-  };
+  if (globals.token) history.replace("/dashboard");
+
+  useEffect(() => {
+    let interval = null;
+    interval = setInterval(
+      () =>
+        !/dashboard/g.test(location.pathname) && state.swiperData.length !== 0
+          ? swiperRef.current.slideNext()
+          : null,
+      5000
+    );
+    return () => {
+      clearInterval(interval);
+    };
+  }, [location.pathname]);
 
   useEffect(() => {
     setShowDrawer(
@@ -137,8 +148,6 @@ export function LandingPage() {
         location.pathname === "/login" ||
         location.pathname === "/forgotPassword"
     );
-
-    console.log(location);
   }, [location]);
 
   return (
@@ -184,7 +193,6 @@ export function LandingPage() {
                   </div>
                 </Button>
               </div>
-
               <Title>
                 <span>
                   Welcome to{" "}
@@ -194,20 +202,21 @@ export function LandingPage() {
                 </span>
               </Title>
               <div className="swiper-content">
-                <Swiper
-                  loop={true}
-                  spaceBetween={50}
-                  pagination={{ clickable: true }}
-                  slidesPerView={"auto"}
-                  // onSlideChange={() => console.log("slide change")}
-                  onSwiper={(swiper) => (swiperRef.current = swiper)}
-                >
-                  {swiperContents.map((item, index) => (
-                    <SwiperSlide>
-                      <span className="slider-text">{item}</span>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
+                {state.swiperData.length !== 0 && (
+                  <Swiper
+                    loop={true}
+                    spaceBetween={50}
+                    pagination={{ clickable: true }}
+                    slidesPerView={"auto"}
+                    onSwiper={(swiper) => (swiperRef.current = swiper)}
+                  >
+                    {state.swiperData.map((item, index) => (
+                      <SwiperSlide>
+                        <span className="slider-text">{item.text}</span>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                )}
               </div>
             </div>
           </div>
@@ -321,20 +330,30 @@ export function LandingPage() {
             special prices
           </span>
           <div className="retailer-prices-wrapper">
-            {[1, 2, 3, 4].map((item, index) => (
+            {Object.keys(state.resellearPlans).map((item, index) => (
               <div key={`retailer-prices_${index}`} className="retailer-prices">
                 <div>
-                  <span>MTN</span>
+                  <span>{item}</span>
                 </div>
                 <div className="divider" />
                 <div className="service-card-img">
-                  <img src={mtn} />
+                  <img
+                    src={
+                      item === "MTN"
+                        ? mtn
+                        : item === "AIRTEL"
+                        ? airtel
+                        : item === "GLO"
+                        ? glo
+                        : null
+                    }
+                  />
                 </div>
                 <div className="service-plans">
-                  {[1, 2, 3, 4, 5, 6].map((item, index) => (
+                  {(state.customerPlans[item] || []).map((data, index) => (
                     <div key={`price_${index}`} className="service-plan">
                       <span>
-                        <b>600</b>Mb &nbsp; --- &nbsp; <b>800</b>Mb
+                        -- <b>{data.dataAmount}</b> --
                       </span>
                     </div>
                   ))}
@@ -368,20 +387,30 @@ export function LandingPage() {
         </div>
         <div>
           <div className="retailer-prices-wrapper">
-            {[1, 2, 3, 4].map((item, index) => (
+            {Object.keys(state.customerPlans).map((item, index) => (
               <div key={`retailer-prices_${index}`} className="retailer-prices">
                 <div>
-                  <span>MTN</span>
+                  <span>{item}</span>
                 </div>
                 <div className="divider" />
                 <div className="service-card-img">
-                  <img src={mtn} />
+                  <img
+                    src={
+                      item === "MTN"
+                        ? mtn
+                        : item === "AIRTEL"
+                        ? airtel
+                        : item === "GLO"
+                        ? glo
+                        : null
+                    }
+                  />
                 </div>
                 <div className="service-plans">
-                  {[1, 2, 3, 4, 5, 6].map((item, index) => (
+                  {state.customerPlans[item].map((data, index) => (
                     <div key={`price_${index}`} className="service-plan">
                       <span>
-                        <b>600</b>Mb &nbsp; --- &nbsp; <b>800</b>Mb
+                        -- <b>{data.dataAmount}</b> --
                       </span>
                     </div>
                   ))}

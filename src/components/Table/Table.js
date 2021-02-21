@@ -71,7 +71,7 @@ export function Table({ data }) {
             <th>kjsdkf</th>
             <th>kjsdkf</th>
           </tr>
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 1, 1, 1, 1].map((item) => (
+          {new Array(10).fill("").map((item) => (
             <tr>
               <td>kjsdkf</td>
               <td>kjsdkf</td>

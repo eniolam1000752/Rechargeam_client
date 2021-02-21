@@ -16,6 +16,7 @@ export function Button({
   verticalInsetPadding,
   horizontalMargin,
   noElevation,
+  isLoading,
 }) {
   const [showTransparent, setShowTransparent] = useState(false);
   return (
@@ -44,7 +45,9 @@ export function Button({
             width: "fit-content",
           }}
         >
-          {text ? (
+          {isLoading ? (
+            <i className="fa fa-spinner" />
+          ) : text ? (
             <span style={{ color: textColor || "var(--white-color)" }}>
               {text}
             </span>
@@ -69,7 +72,9 @@ export function Button({
             width: "fit-content",
           }}
         >
-          {text ? (
+          {isLoading ? (
+            <i className="fa fa-spinner" />
+          ) : text ? (
             <span style={{ color: textColor || "var(--white-color)" }}>
               {text}
             </span>
@@ -79,6 +84,7 @@ export function Button({
         </a>
       ) : (
         <button
+          disabled={isLoading}
           className={`btn ${isRounded ? "rounded" : "flat"}`}
           style={{
             backgroundColor: bgColor || null,
@@ -91,7 +97,9 @@ export function Button({
             marginRight: horizontalMargin,
           }}
         >
-          {text ? (
+          {isLoading ? (
+            <i className="fa fa-spinner" />
+          ) : text ? (
             <span style={{ color: textColor || "var(--white-color)" }}>
               {text}
             </span>

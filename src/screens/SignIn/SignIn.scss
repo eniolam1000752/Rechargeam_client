@@ -2,12 +2,18 @@
   width: 100%;
   height: 100%;
   overflow: scroll;
-
   .input-fields-wrapper {
     width: 90%;
     margin-top: 50px;
     margin-left: 20px;
     margin-right: 20px;
+    .error-msg {
+      color: red;
+      opacity: 0.8;
+      font-weight: 400;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
     .forget-password-link {
       font-family: "Comfortaa";
       font-size: 13px;
