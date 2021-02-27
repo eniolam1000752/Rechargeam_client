@@ -16,6 +16,7 @@ export function AirtimeScreen({}) {
       </div>
       <div className="form-section">
         <NetworkSelector
+        
           onSelected={(item) => {
             dispatch({ selectedNetwork: item.network });
             dispatch({ selectedNetworkIndex: item.index });
@@ -42,8 +43,14 @@ export function AirtimeScreen({}) {
             value={state.description}
             onChangeText={(description) => dispatch({ description })}
           />
-          <div style={{ margin: 60 }} />
-          <Button text="Buy Airtime" onPress={buy} />
+          <div style={{ height: 30 }} />
+          <span className="error-msg">{state.errorMsg}</span>
+          <div style={{ height: 10 }} />
+          <Button
+            text="Buy Airtime"
+            onPress={buy}
+            isLoading={state.isLoading}
+          />
         </div>
       </div>
     </div>

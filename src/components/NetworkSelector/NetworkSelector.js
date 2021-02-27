@@ -13,13 +13,21 @@ import exchangeImage from "../../assets/svgs/exchange_image.svg";
 import "./NetworkSelector.scss";
 
 export function NetworkSelector({ selectedIndex, onSelected, onInitSelect }) {
+  //@state
+
+  let networdProviders = [
+    { id: 1, name: "MTN" },
+    { id: 2, name: "GLO" },
+    { id: 3, name: "AIRTEL" },
+  ];
+
   return (
     <div className="network-selector">
       <div>
         <span>Select Mobile operator</span>
       </div>
       <div className="network-selector-wrapper">
-        {[1, 2, 3].map((item, index) => (
+        {networdProviders.map((item, index) => (
           <div className="network">
             <Button
               bgColor="transparent"
@@ -33,12 +41,21 @@ export function NetworkSelector({ selectedIndex, onSelected, onInitSelect }) {
                   selectedIndex === index ? "selected" : ""
                 }`}
               >
-                <img src={item === 1 ? mtn : item === 2 ? glo : airtel} />
+                <img
+                  alt={item.name}
+                  src={
+                    item.name === "MTN"
+                      ? mtn
+                      : item.name === "GLO"
+                      ? glo
+                      : airtel
+                  }
+                />
               </div>
             </Button>
 
             <div className="network-title">
-              <span>MTN</span>
+              <span>{item.name}</span>
             </div>
           </div>
         ))}

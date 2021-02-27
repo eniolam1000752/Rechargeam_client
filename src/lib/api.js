@@ -15,6 +15,7 @@ const ROUTES = {
   register: `${BASE_URL}/customer/register`,
   logout: `${BASE_URL}/customer/logout`,
   getUser: `${BASE_URL}/customer/getUser`,
+  requestAirtime: `${BASE_URL}/request/sendRequest`,
   forget_password: `${BASE_URL}/customer/forgetPassword`,
 
   getSliderData: `${BASE_URL}/landingPage/sliderData`,
@@ -36,6 +37,8 @@ export const API = {
   register: (payload) => request(ROUTES.register, payload, "POST", {}),
   forgetPassword: (payload) =>
     request(ROUTES.forget_password, payload, "POST", {}),
+  requestAirtime: (payload) =>
+    request(ROUTES.requestAirtime, payload, "POST", {}),
 };
 
 export const defaultHeader = {

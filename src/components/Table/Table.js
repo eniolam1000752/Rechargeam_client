@@ -19,7 +19,7 @@ export function Table({
   //@state
   let errMsg = null;
   //@state
-  let transactions = [];
+  let requests = [];
   //@state
   let renderedTransactions = [];
   //@state
@@ -56,8 +56,9 @@ export function Table({
     if (shouldGetTransactions) {
       isLoading = true;
       API.getTransactions()
-        .then(({ transactions: trans }) => {
-          transactions = trans;
+        .then(({ requests: reqs }) => {
+          console.log(reqs);
+          requests = reqs;
         })
         .catch((err) => {
           errMsg = err;
@@ -110,34 +111,37 @@ export function Table({
               />
             </div>
           </div>
-        ) : transactions.length <= 0 ? (
+        ) : requests.length <= 0 ? (
           <div className="msg-section">
             <span>You don't have a transaction record at the moment.</span>
           </div>
         ) : (
           <table className="table">
-            <tr className="table-head">
-              <th>kjsdkf</th>
-              <th>kjsdkf</th>
-              <th>kjsdkf</th>
-              <th>kjsdkf</th>
-              <th>kjsdkf</th>
-              <th>kjsdkf</th>
-              <th>kjsdkf</th>
-              <th>kjsdkf</th>
-            </tr>
-            {transactions.fill("").map((item, index) => (
-              <tr key={`row_${index}`}>
-                <td>kjsdkf</td>
-                <td>kjsdkf</td>
-                <td>kjsdkf</td>
-                <td>kjsdkf</td>
-                <td>kjsdkf</td>
-                <td>kjsdkf</td>
-                <td>kjsdkf</td>
-                <td>kjsdkf</td>
+            <thead>
+              <tr className="table-head">
+                <th>Id</th>
+                <th>Transaction Ref</th>
+                <th>Amount</th>
+                <th>Network</th>
+                <th>Phone number</th>
+                <th>Status</th>
+                <th>Date</th>
               </tr>
-            ))}
+            </thead>
+
+            <tbody>
+              {requests.map((item, index) => (
+                <tr key={`row_${index}`}>
+                  <td>{item.id}</td>
+                  <td>{item.ref}</td>
+                  <td>{item.amount}</td>
+                  <td>{item.processor}</td>
+                  <td>{item.phoneNumber}</td>
+                  <td>{item.status}</td>
+                  <td>{item.createdAt}</td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         )}
       </div>
