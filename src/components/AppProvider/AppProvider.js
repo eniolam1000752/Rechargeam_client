@@ -9,7 +9,7 @@ export function AppProvider({ initValues, children }) {
   );
 
   return (
-    <AppContext.Provider value={{ ...initValues }}>
+    <AppContext.Provider value={{ ...state, dispatch }}>
       {children}
     </AppContext.Provider>
   );

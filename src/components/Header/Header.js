@@ -1,12 +1,14 @@
 import "./Header.scss";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "../Button/Button";
 import { Popover } from "../Popover/Popover";
 
 import eniola from "../../assets/images/eni 2.png";
+import { AppContext } from "../AppProvider/AppProvider";
 
 export function Header({ logo, hasAuth, shouldStick, actions, forDashboard }) {
+  const { userData } = useContext(AppContext);
   const location = useLocation();
 
   //@state
@@ -264,9 +266,11 @@ export function Header({ logo, hasAuth, shouldStick, actions, forDashboard }) {
             ) : (
               <div className="profile-avatar-wrapper">
                 <div className="profile-text-wrapper">
-                  <span>kjksjdfsf</span>
+                  <span>
+                    {(userData || { customer: {} }).customer.username}
+                  </span>
                   <div>
-                    <span>sfadfadfadfadfafaef</span>
+                    <span>{(userData || { customer: {} }).customer.email}</span>
                   </div>
                 </div>
                 <img src={eniola} />

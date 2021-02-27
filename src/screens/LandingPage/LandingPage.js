@@ -47,12 +47,6 @@ export function LandingPage() {
     { title: "Reviews", path: "/reviews" },
   ];
 
-  const swiperContents = [
-    "Home of affordable data!, Airtime top-up, cableTV subscription, electricity bills payment also available at very discounted prices... Here you get all your transactions done in one place with ease and great customer support.",
-    "kjsldj ;kjsldfj lskdfj skdfj sfj akdf af alfj akfja fka dflafkas fdaskfd ask fjkajfj akfjalfj klajf kjsldj ;kjsldfj lskdfj skdfj sfj akdf af alfj akfja fka dflafkas fdaskfd ask fjkajfj akfjalfj klajf ",
-    "kjsldj ;kjsldfj lskdfj skdfj sfj akdf af alfj akfja fka dflafkas fdaskfd ask fjkajfj akfjalfj klajf kjsldj ;kjsldfj lskdfj skdfj sfj akdf af alfj akfja fka dflafkas fdaskfd ask fjkajfj akfjalfj klajf",
-  ];
-
   const featureDescription = [
     {
       icon: cooperation,

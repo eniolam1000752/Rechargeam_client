@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Button } from "../../components/Button/Button";
 import { InputText } from "../../components/InputText/InputText";
 import { Title } from "../../components/Title/Title";
@@ -7,7 +7,9 @@ import { useController } from "./SignUp.controller";
 import "./SignUp.scss";
 
 export function SignUp({}) {
-  const { state, dispatch } = useController();
+  const history = useHistory();
+  const { state, dispatch, onSignUp } = useController(history);
+
   return (
     <div className="sign-in">
       <div className="header-title-wrapper">
@@ -18,7 +20,11 @@ export function SignUp({}) {
           <Title align="left" text="Sign Up" />
         </div>
       </div>
-      <div className="input-fields-wrapper">
+      <form
+        method="get"
+        action="javascript:void(0)"
+        className="input-fields-wrapper"
+      >
         <InputText
           value={state.username}
           placeholder="Username"
@@ -36,10 +42,10 @@ export function SignUp({}) {
           bottomMargin={30}
         />
         <InputText
-          value={state.phone}
+          value={state.phoneNumber}
           placeholder="(+234) Phone Number"
-          onChangeText={(phone) => {
-            dispatch({ phone });
+          onChangeText={(phoneNumber) => {
+            dispatch({ phoneNumber });
           }}
           topMargin={50}
           bottomMargin={30}
@@ -56,22 +62,26 @@ export function SignUp({}) {
         />
         <InputText
           isPassword
-          value={state.cPassword}
+          value={state.cpassword}
           placeholder="Confirm Password"
-          onChangeText={(password) => {
-            dispatch({ password });
+          onChangeText={(cpassword) => {
+            dispatch({ cpassword });
           }}
           topMargin={50}
           bottomMargin={30}
         />
-        <div style={{ height: 60 }} />
+        <span className="error-msg">{state.errorMsg}</span>
+        <div style={{ height: 10 }} />
         <Button
           text="Register"
           horizontalInsetPadding={30}
           verticalInsetPadding={14}
+          isLoading={state.isLoading}
+          onPress={onSignUp}
+          isSubmit
         />
         <div style={{ height: 60 }} />
-      </div>
+      </form>
     </div>
   );
 }

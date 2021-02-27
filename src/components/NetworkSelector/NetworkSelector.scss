@@ -14,7 +14,7 @@
       .network-image {
         width: 60px;
         height: 60px;
-        border: 2px solid var(--primary-color);
+        border: 0px solid var(--primary-color);
         border-radius: 50%;
         margin-left: 10px;
         margin-right: 10px;
@@ -22,6 +22,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+      }
+      .network-image.selected {
+        border: 4px solid var(--primary-color);
       }
       .network-title {
         margin-top: 8px;

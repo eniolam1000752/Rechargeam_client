@@ -11,7 +11,11 @@ export function InputText({
   topMargin,
   bottomMargin,
   verticalMargin,
+  type,
 }) {
+  //@state
+  let showPassword = false;
+
   return (
     <div
       className="text-input"
@@ -29,12 +33,16 @@ export function InputText({
               onChangeText(event.nativeEvent.target.value);
             }}
             disabled={disable}
-            type={isPassword ? "password" : "text"}
+            type={isPassword && !showPassword ? "password" : type || "text"}
           />
         </div>
         {isPassword && (
           <div>
-            <Button bgColor="transparent" isRounded>
+            <Button
+              bgColor="transparent"
+              isRounded
+              onPress={() => (showPassword = !showPassword)}
+            >
               <i className="fa fa-eye" />
             </Button>
           </div>

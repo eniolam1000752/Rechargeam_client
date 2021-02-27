@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "../Button/Button";
 import "./ReferSection.scss";
 
-export function ReferSection() {
+export function ReferSection({ url }) {
   return (
     <section className="refer-section-wrapper">
       <div className="section-content">
@@ -13,11 +13,14 @@ export function ReferSection() {
           </span>
         </div>
         <div className="refer-content">
-          <span>https://www.rechargeam.com/page/create/username/512639</span>
+          <span>{url}</span>
           <Button
             bgColor="var(--grey2-color)"
             text="copy to clipboard"
             horizontalInsetPadding={15}
+            onPress={() => {
+              navigator.clipboard.writeText(url);
+            }}
           />
           <div className="vertical-line" />
           <span>or share on</span>

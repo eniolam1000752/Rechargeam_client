@@ -15,8 +15,6 @@ export function Modal({ show, translucent, onDismiss, children }) {
     onDismiss();
   };
 
-  console.log("kjskdjf");
-
   return (
     <div
       onClick={handleToggleModal}
