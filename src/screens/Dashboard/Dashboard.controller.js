@@ -38,7 +38,7 @@ export function useController(history) {
         appDispatch({ userData: resp });
       })
       .catch((err) => {
-        prompt("Unable to get user data");
+        Alert.alert("Error", "Unable to get user data");
       })
       .finally(() => appDispatch({ isLoading: false }));
   }
