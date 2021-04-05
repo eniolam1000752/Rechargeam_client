@@ -1,0 +1,51 @@
+.button {
+  .fa-spinner {
+    font-size: 19px;
+    color: var(--white-color);
+    animation-name: spinner-anime;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  .btn {
+    padding: 10px;
+    background-color: var(--primary-color);
+    outline: none;
+    border: 0px solid transparent;
+    transition: all linear 200ms;
+    cursor: pointer;
+    width: fit-content;
+  }
+  .btn:hover {
+    box-shadow: 1px 5px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .rounded {
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .flat {
+    border-radius: 3px;
+  }
+}
+
+.button.no-elevation {
+  .btn:hover {
+    box-shadow: unset !important;
+  }
+}
+
+@keyframes spinner-anime {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  0% {
+    transform: rotate(0deg);
+  }
+}

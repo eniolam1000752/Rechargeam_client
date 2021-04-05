@@ -1,5 +1,6 @@
 .landing-page {
   width: 100%;
+  position: relative;
   .background-layer {
     width: 100%;
     position: absolute;
@@ -24,6 +25,16 @@
       position: absolute;
       right: -90px;
     }
+    .circle-2 {
+      width: 770px;
+      height: 770px;
+      background-color: var(--primary-color);
+      opacity: 0.03;
+      border-radius: 50%;
+      margin-top: 950px;
+      position: absolute;
+      left: -120px;
+    }
   }
   .section-0,
   .section-1 {
@@ -38,6 +49,21 @@
       position: relative;
       left: 80px;
       top: 20px;
+      .quick-buy-section {
+        margin-bottom: 50px;
+        i.fas {
+          font-size: 19px;
+          margin-left: -3px;
+          margin-right: 10px;
+          color: var(--white-color);
+        }
+        span {
+          font-family: "Montserrat";
+          font-weight: 300;
+          color: var(--white-color);
+          font-size: 15px;
+        }
+      }
       .swiper-content {
         width: 400px;
         margin-top: 49px;
@@ -104,7 +130,8 @@
     flex-direction: row;
     justify-content: center;
     margin-top: 150px;
-    margin-bottom: 120px;
+    margin-bottom: 70px;
+    flex-wrap: wrap;
     .description {
       width: 240px;
       padding-left: 10px;
@@ -115,6 +142,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      margin-bottom: 50px;
       img ~ span {
         text-align: center;
         margin-top: 30px;
@@ -140,9 +168,177 @@
   }
   .services-header ~ div {
     width: 100%;
-    padding: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 120px;
+    padding-bottom: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    .service-card {
+      width: 270.78px;
+      height: 490.68px;
+      border-radius: 27.5px;
+      background-color: var(--white1-color);
+      box-shadow: 0px 13.7512px 183.35px -11.9177px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 28px;
+      margin-right: 28px;
+
+      .service-card-img {
+        width: 60%;
+        margin-top: 30px;
+        img {
+          width: 100%;
+          height: 150px;
+        }
+      }
+      .service-card-img ~ div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 35px;
+      }
+      .service-card-img + div span {
+        font-size: 13px;
+        font-weight: 200;
+        text-align: center;
+        width: 80%;
+        line-height: 20px;
+      }
+    }
+    .service-card > div:first-child {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 30px;
+      padding-bottom: 20px;
+      span {
+        font-family: "Montserrat";
+        font-weight: 300;
+        font-size: 16px;
+        width: 60%;
+        text-align: center;
+        line-height: 22px;
+        color: var(--text-color);
+      }
+    }
+    .divider {
+      width: 80%;
+      height: 1px;
+      background-color: var(--dark-color);
+      opacity: 0.1;
+    }
+  }
+  .retailer-pricing-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 70px;
+  }
+
+  .retailer-pricing-header + div,
+  .end-user-pricing-header + div {
+    padding-top: 50px;
+    padding-bottom: 120px;
+    span {
+      a {
+        font-weight: bold;
+        color: var(--primary-color);
+      }
+      margin-left: 70px;
+    }
+    .retailer-prices-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 50px;
+      flex-wrap: wrap;
+      span {
+        margin-left: unset;
+      }
+      .retailer-prices:hover {
+        transform: scale(1.05);
+        transition: all linear 250ms;
+      }
+      .retailer-prices {
+        width: 268px;
+        border-radius: 27.5px;
+        background-color: var(--white1-color);
+        box-shadow: 0px 13.7512px 183.35px -11.9177px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 28px;
+        margin-right: 28px;
+        position: relative;
+        padding-bottom: 30px;
+        transition: all linear 250ms;
+        margin-bottom: 30px;
+
+        .divider {
+          width: 80%;
+          height: 1px;
+          background-color: var(--dark-color);
+          opacity: 0.1;
+        }
+        .service-card-img {
+          position: absolute;
+          top: 75px;
+          background-color: var(--white-color);
+          img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+          }
+        }
+        .service-plans {
+          margin-top: 80px;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          .service-plan {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 17px;
+            span {
+              font-size: 13px;
+              font-weight: 400;
+            }
+          }
+          .button-wrapper {
+            margin-top: 30px;
+          }
+        }
+      }
+      .retailer-prices > div:first-child {
+        margin-top: 30px;
+        padding-bottom: 40px;
+      }
+      .retailer-prices > div:first-child span {
+        margin-left: unset;
+        font-weight: 600;
+        font-size: 18px;
+      }
+    }
+  }
+  .end-user-pricing-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 70px;
+    margin-top: 20px;
+  }
+  .end-user-pricing-header + div {
+    padding-top: 20px;
+    padding-bottom: 100px;
   }
   .our-partners-header {
     width: 100%;
@@ -161,7 +357,7 @@
     justify-content: center;
     span {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 10px;
       margin-bottom: 30px;
       width: 50%;
       font-size: 14px;
@@ -175,7 +371,7 @@
       align-items: center;
       justify-content: center;
       margin-top: 50px;
-      margin-bottom: 50px;
+      margin-bottom: 10px;
       img {
         width: 100px;
         margin-left: 90px;
@@ -186,6 +382,204 @@
       img:hover {
         transform: scale(1.2);
         transition: all cubic-bezier(0.9, 0.36, 0.21, 1.65) 300ms;
+      }
+    }
+  }
+  .ready-to-get-started {
+    width: 100%;
+    height: 150px;
+    background-color: #f2f7fd;
+    display: flex;
+    flex-direction: row;
+  }
+  .ready-to-get-started > div {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    .title {
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .title ~ span {
+      font-weight: 13px;
+      position: relative;
+      top: -10px;
+      font-size: 13px;
+    }
+  }
+  .ready-to-get-started > div ~ div {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 50px;
+  }
+  .footer-wrapper {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--dark-color);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .left-content {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      padding-left: 50px;
+      .social-button-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 10px;
+        i {
+          color: var(--grey0-colors);
+          font-size: 15px;
+        }
+      }
+      .footer-link {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-family: "Montserrat";
+        font-weight: 300;
+        a {
+          text-decoration: none;
+          color: var(--white-color);
+          font-size: 12px;
+        }
+      }
+      .footer-link:hover {
+        font-weight: 700;
+      }
+    }
+    .right-content {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      font-family: "Montserrat";
+    }
+    .right-content > div {
+      margin-bottom: 17px;
+      color: var(--white-color);
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .right-content > div > span:first-child {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .landing-page {
+    .illustration-text-wrapper {
+      left: 0px !important;
+    }
+    .illustration-text-wrapper > div {
+      transform: scale(0.87) !important;
+    }
+    .illustration-image-wrapper {
+      z-index: -2 !important;
+      opacity: 0.3;
+    }
+    .illustration-image-wrapper.second-section {
+      display: none;
+    }
+    .section-1 {
+      transform: translateY(-170px) !important;
+    }
+    .quick-buy-section.second-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      width: 100% !important;
+      transform: translateX(30px) !important;
+    }
+    .section-0 {
+      margin-top: -10px !important;
+    }
+    .swiper-content {
+      margin-left: 0px !important;
+      width: 380px !important;
+    }
+    .descriptions-wrapper {
+      margin-top: -80px !important;
+      transform: scale(0.9) !important;
+    }
+    .services-header ~ div {
+      padding-top: 30px !important;
+      padding-bottom: 60px !important;
+      .service-card {
+        transform: scale(0.9) !important;
+      }
+    }
+    .retailer-pricing-header {
+      padding-left: 20px;
+    }
+    .retailer-pricing-header ~ div .reseller-description-text {
+      margin-left: 0px;
+      font-size: 12px;
+      padding-left: 30px;
+    }
+    .retailer-pricing-header ~ div {
+      padding-top: 30px !important;
+      padding-bottom: 50px !important;
+    }
+    .retailer-pricing-header ~ div span ~ div {
+      margin-top: 35px !important;
+    }
+    .end-user-pricing-header {
+      padding-right: 28px !important;
+    }
+    .partners-content {
+      padding: 0px !important;
+      span {
+        width: 80% !important;
+        font-size: 12px !important;
+      }
+      .partners-wrapper img {
+        margin-right: 40px !important;
+        margin-left: 40px !important;
+      }
+    }
+    .ready-to-get-started > div:first-child {
+      transform: scale(0.9) !important;
+    }
+    .ready-to-get-started > div:first-child ~ div {
+      flex-wrap: wrap;
+      button {
+        padding: 14px !important;
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+    .left-content {
+      padding-left: 0px !important;
+    }
+    .right-content {
+    }
+    .right-content > div:first-child div {
+      span {
+        font-size: 10px !important;
+        text-align: right !important;
+      }
+    }
+    .right-content > div:first-child ~ div div {
+      display: flex;
+
+      span {
+        transform: scale(0.8) translateX(25px) !important ;
+        text-align: right !important;
       }
     }
   }

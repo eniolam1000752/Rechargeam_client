@@ -1,6 +1,18 @@
+@import "./assets//fonts//fontawesome/scss/fontawesome.scss";
+@import "./assets//fonts//fontawesome/scss/regular.scss";
+@import "./assets//fonts//fontawesome/scss/solid.scss";
+@import "./assets//fonts//fontawesome/scss/brands.scss";
 @import "./globals";
 
 .app {
   width: 100%;
   font-family: "Montserrat";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
 }

@@ -1,0 +1,84 @@
+.dashboard-screen-wrapper {
+  width: 100%;
+  padding: 10px;
+  .welcome-back-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 20px;
+  }
+  .welcome-back-wrapper > span:first-child {
+    font-family: "Montserrat";
+    font-size: 30px;
+    font-weight: 100;
+    padding-right: 20px;
+  }
+  .welcome-back-wrapper > span:first-child ~ div {
+    margin-top: 10px;
+    span {
+      font-family: "Comfortaa";
+      font-size: 30px;
+      font-weight: 500;
+      padding-right: 20px;
+      color: var(--primary-color);
+    }
+  }
+  .wallet-section {
+    width: 100%;
+    padding-left: 30px;
+    margin-top: -20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    .my-wallet-text {
+      font-size: 30px;
+      font-weight: 100;
+      padding-bottom: 20px;
+    }
+    .quick-service-selection {
+      width: 160px;
+      height: 180px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-left: 130px;
+      margin-top: 70px;
+    }
+    .service-selection-btn {
+      width: 50px;
+      height: 50px;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: rgba($color: #000000, $alpha: 0.6);
+      i {
+        font-size: 25px;
+        margin-bottom: 8px;
+        color: var(--grey2-color);
+      }
+      span {
+        font-family: "Comfortaa";
+        font-weight: 200;
+        font-size: 11px;
+      }
+    }
+  }
+  .table-loader-fallback {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    span {
+      font-size: 11px;
+      font-size: 300;
+      margin-top: 20px;
+    }
+  }
+}

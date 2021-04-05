@@ -1,0 +1,104 @@
+.layout {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  flex: 1;
+  .layout-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    .left-pane {
+      width: 300px;
+      position: relative;
+      background-color: var(--black-color);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+      transition: all linear 300ms;
+      .content-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden scroll;
+        flex: 1;
+        margin-top: 130px;
+        .link.visited {
+          font-weight: 600;
+          font-size: 16px;
+          i {
+            color: var(--primary-color);
+          }
+          span {
+            color: var(--primary-color) !important;
+            font-weight: 600 !important;
+            font-size: 16px !important;
+          }
+        }
+        .link.only-icon {
+          padding-left: 10px !important;
+        }
+        .link {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding-top: 16px;
+          padding-bottom: 16px;
+          padding-left: 25px;
+          text-decoration: none;
+          .link-icon {
+            color: var(--white-color);
+            margin-right: 15px;
+            position: relative;
+            min-width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            i {
+              font-size: 20px;
+            }
+          }
+          .link-icon ~ span {
+            text-decoration: none;
+            color: var(--white-color);
+            font-size: 15px;
+            font-weight: 200;
+          }
+        }
+        .link:hover {
+          i {
+            color: var(--secondary-color);
+          }
+          .link-icon ~ span {
+            text-decoration: none;
+            color: var(--white-color);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--secondary-color);
+          }
+          font-weight: 600;
+          transition: all linear 100ms;
+        }
+      }
+      .view-mode-btn-wrapper {
+        position: absolute;
+        right: -18px;
+        top: 50px;
+        z-index: 6;
+        i {
+          font-size: 15px;
+        }
+      }
+    }
+    .right-pane {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      background-color: var(--gray1-color);
+      overflow: hidden scroll;
+    }
+  }
+}
