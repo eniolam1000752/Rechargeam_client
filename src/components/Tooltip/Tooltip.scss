@@ -1,0 +1,26 @@
+.tooltip {
+  padding: 10px;
+  font-size: 11px;
+  font-family: Montserrat;
+  display: flex;
+  flex-direction: column;
+  a {
+    font-weight: bolder;
+    color: #2280fa;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 11px;
+  }
+}
+
+.toolcontainer {
+  display:flex;
+  flex-direction: row;
+  background-color: rgba(235, 87, 87, 0.22);
+  border-radius: 10px;
+  transition: all 1s ease-in-out;
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
