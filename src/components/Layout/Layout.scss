@@ -17,6 +17,16 @@
       flex-direction: column;
       box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
       transition: all linear 300ms;
+      .content-wrapper::-webkit-scrollbar {
+        background: transparent;
+        width: 10px;
+      }
+      .content-wrapper::-webkit-scrollbar-thumb {
+        background-color: white;
+        width: 80%;
+        border-radius: 30px;
+        margin-right: 10px;
+      }
       .content-wrapper {
         width: 100%;
         display: flex;

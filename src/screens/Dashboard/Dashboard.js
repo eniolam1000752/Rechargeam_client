@@ -9,6 +9,7 @@ import { useHistory } from "react-router";
 import { FullScreenLoader } from "../../components/FullScreenLoader/FullScreenLoader";
 import { AppContext } from "../../components/AppProvider/AppProvider";
 import { useController } from "../Dashboard/Dashboard.controller";
+import Account from "../Account/Account";
 
 export function Dashboard() {
   const history = useHistory();
@@ -48,7 +49,7 @@ export function Dashboard() {
           },
           {
             path: "/dashboard/account",
-            component: <span> Account</span>,
+            component: <Account />,
             text: "Account",
             icon: "fa fa-user-cog",
           },

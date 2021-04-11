@@ -1,0 +1,46 @@
+.element-container {
+  width: 100%;
+  padding: 10px;
+  .input-continer {
+    display: flex;
+    flex-direction: row;
+    margin-left: 27px;
+    .input1 {
+      width: 420px;
+    }
+    .input2 {
+      margin-left: 20px;
+      width: 420px;
+    }
+  }
+  .toolandwallet {
+    display: flex;
+    justify-content: space-between;
+    margin: 13px;
+
+    .Tooltip2 {
+      margin-top: 30px;
+    }
+  }
+  .toolandwallet > div {
+    margin: 10px;
+  }
+  .hed {
+    margin-left: 27px;
+  }
+
+  .button {
+    margin-top: 30px;
+    margin-left: 13px;
+  }
+  .anckle {
+    margin-top: 19px;
+    font-size: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #2280fa !important;
+  }
+  .profile {
+    margin-left: 25px;
+  }
+}
