@@ -5,18 +5,24 @@ import { NetworkSelector } from "../../components/NetworkSelector/NetworkSelecto
 import { Wallet } from "../../components/Wallet/Wallet";
 import { useController } from "./Airtime.controller";
 import "./Airtime.scss";
+import Tooltip from "../../components/Tooltip/Tooltip";
 
 export function AirtimeScreen({}) {
   const { state, dispatch, buy } = useController();
 
   return (
     <div className="airtime-screen-wrapper">
-      <div className="my-wallet-section">
-        <Wallet />
+      <div className="t">
+        <div className="Tooltip-section">
+          <Tooltip />
+        </div>
+        <div className="my-wallet-section">
+          <Wallet />
+        </div>
       </div>
+
       <div className="form-section">
         <NetworkSelector
-        
           onSelected={(item) => {
             dispatch({ selectedNetwork: item.network });
             dispatch({ selectedNetworkIndex: item.index });

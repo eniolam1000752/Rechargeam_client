@@ -8,7 +8,7 @@ import { Wallet } from "../../components/Wallet/Wallet";
 import "./Transaction.scss";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-
+import Tooltip from "../../components/Tooltip/Tooltip";
 let isStartDateSelected = true;
 
 export function TransactionScreen({}) {
@@ -50,6 +50,9 @@ export function TransactionScreen({}) {
         <div style={{ height: 60 }} />
         <div className="row">
           <div className="col6">
+            <div className="Tooltip-section">
+              <Tooltip />
+            </div>
             <div className="date-selection-wrapper">
               <Button
                 bgColor="white"

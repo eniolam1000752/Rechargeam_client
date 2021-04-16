@@ -5,15 +5,22 @@ import { NetworkSelector } from "../../components/NetworkSelector/NetworkSelecto
 import { Wallet } from "../../components/Wallet/Wallet";
 import { useController } from "./Data.controller";
 import "./Data.scss";
+import Tooltip from "../../components/Tooltip/Tooltip";
 
 export function DataScreen({}) {
   const { state, dispatch, buy } = useController();
 
   return (
     <div className="airtime-screen-wrapper">
+    <div class="t">
+       <div className="Tooltip-section">
+        <Tooltip />
+      </div>
       <div className="my-wallet-section">
         <Wallet />
       </div>
+    </div>
+     
       <div className="form-section">
         <NetworkSelector />
         <div className="input-section">

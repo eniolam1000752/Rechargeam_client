@@ -30,7 +30,7 @@ export function InputText({
             placeholder={placeholder}
             value={value}
             onChange={(event) => {
-              onChangeText(event.nativeEvent.target.value);
+              (onChangeText || (() => {}))(event.nativeEvent.target.value);
             }}
             disabled={disable}
             type={isPassword && !showPassword ? "password" : type || "text"}
