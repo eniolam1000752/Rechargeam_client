@@ -218,14 +218,14 @@
       display: flex !important;
       margin-right: 10px !important;
     }
-    .header-actions {
+    .header-actions .no-dashbaord {
       display: none !important;
     }
   }
   .fake-header {
     height: 50px !important;
   }
-  .header-menu-button {
+  .header-menu-button .no-dashbaord {
     width: 40px;
     height: 40px;
     display: block !important;

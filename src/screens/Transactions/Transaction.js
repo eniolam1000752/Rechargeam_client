@@ -49,7 +49,7 @@ export function TransactionScreen({}) {
       <div className="dashboard-screen-wrapper">
         <div style={{ height: 60 }} />
         <div className="row">
-          <div className="col6">
+          <div className="col6 con">
             <div className="Tooltip-section">
               <Tooltip />
             </div>
@@ -95,7 +95,7 @@ export function TransactionScreen({}) {
               </Button>
             </div>
           </div>
-          <div className="col6">
+          <div className="col6 con">
             <div className="align-right">
               <div className="search-input">
                 <InputText placeholder="search" />

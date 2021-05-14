@@ -151,7 +151,11 @@ export function Header({ logo, hasAuth, shouldStick, actions, forDashboard }) {
         </Link>
         <span style={{ marginTop: 6 }}> echargeam</span>
         <div>
-          <div className="header-menu-button">
+          <div
+            className={`header-menu-button ${
+              forDashboard ? "no-dashbaord" : ""
+            }`}
+          >
             <Button
               isRounded
               horizontalInsetPadding={11}
@@ -161,7 +165,9 @@ export function Header({ logo, hasAuth, shouldStick, actions, forDashboard }) {
               <i className="fa fa-bars" />
             </Button>
           </div>
-          <div className="header-actions">
+          <div
+            className={`header-actions ${forDashboard ? "no-dashbaord" : ""}`}
+          >
             {!forDashboard
               ? actions.map((item, index) => (
                   <div key={`header-action-${index}`} className="action">

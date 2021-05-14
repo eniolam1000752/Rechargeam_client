@@ -12,7 +12,7 @@ export function DataScreen({}) {
 
   return (
     <div className="airtime-screen-wrapper">
-    <div class="t">
+    <div class="tool-and-wallet-wrapper">
        <div className="Tooltip-section">
         <Tooltip />
       </div>

@@ -102,7 +102,7 @@ export function Table({
         </div>
         {errMsg ? (
           <div className="error-msg-section">
-            <span>'kjkjsdf'</span>
+            <span>{(errMsg || {}).msg}</span>
             <div className="retry-btn">
               <Button
                 text="Retry"
