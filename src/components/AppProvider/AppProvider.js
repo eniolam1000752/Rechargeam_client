@@ -12,17 +12,20 @@ export function AppProvider({ initValues, children }) {
   );
 
   const onResize = useCallback((event) => {
-    // console.log("resized", event.target.screen.width);
+    console.log("resized", event.target.screen.width);
     dispatch({
       dimension: {
         width: event.target.screen.width,
         height: event.target.screen.width,
       },
     });
-  }, []);
+  });
 
   useEffect(() => {
     window.addEventListener("resize", onResize);
+    window.addEventListener("resize", (event) => {
+      console.log(event.target.screen);
+    });
     return () => {
       window.removeEventListener("resize", onResize);
     };
