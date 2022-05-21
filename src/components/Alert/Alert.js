@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect, useMemo } from "react";
 import { EventEmitter } from "events";
 import { Button } from "../Button/Button";
 import { Modal } from "../Modal/Modal";
@@ -30,6 +30,7 @@ export function AlertUI() {
   //@init()
   const onMount = () => {
     alertEvent.addListener("show", (data) => {
+      console.log("show");
       const { headerText, msg, btns, cancelable } = data;
       alertText = msg;
       header = headerText;
@@ -57,8 +58,11 @@ export function AlertUI() {
     });
   };
 
+  useEffect(onMount, []);
+
   return (
     <Modal
+      id="alert-modal"
       show={show}
       onDismiss={() => {
         show = false;
@@ -74,7 +78,7 @@ export function AlertUI() {
           className="alert-content"
           onClick={(event) => event.stopPropagation()}
         >
-          <div className="header-text">
+          <div className="header-text" data-testid="alert-header">
             <span>{header}</span>
           </div>
           <div className="main-text">
