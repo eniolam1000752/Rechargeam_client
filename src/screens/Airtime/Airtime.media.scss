@@ -1,0 +1,19 @@
+@media (max-width: 700px) {
+  .tool-and-wallet-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    padding-right: 100px;
+  }
+  .Tooltip-section {
+    width: 100%;
+  }
+  .my-wallet-section {
+    margin-left: 30px;
+  }
+}
+@media (min-width: 700px) and (max-width: 850px) {
+  .Tooltip-section {
+    padding-right: 50px;
+  }
+}

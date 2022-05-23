@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import { Header } from "../Header/Header";
 import "./Layout.scss";
 
 import logo from "../../assets/svgs/logo.svg";
 import { Button } from "../Button/Button";
 import { Link, Route, Router, Switch, useLocation } from "react-router-dom";
+import { AppContext } from "../AppProvider/AppProvider";
 
 export function Layout({ routes }) {
   //@state
   let collapseLeftPane = false;
 
+  const { dimension } = useContext(AppContext);
   const location = useLocation();
+
+  useEffect(() => {
+    if (dimension && dimension.width <= 870) collapseLeftPane = true;
+  }, [dimension]);
 
   return (
     <div className="layout">

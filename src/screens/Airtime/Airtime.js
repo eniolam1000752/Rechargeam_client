@@ -12,7 +12,7 @@ export function AirtimeScreen({}) {
 
   return (
     <div className="airtime-screen-wrapper">
-      <div className="t">
+      <div className="tool-and-wallet-wrapper">
         <div className="Tooltip-section">
           <Tooltip />
         </div>

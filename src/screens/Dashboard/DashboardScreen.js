@@ -38,7 +38,7 @@ export function DashbaordScreen({}) {
             horizontalInsetPadding={0}
             verticalInsetPadding={0}
           >
-            <Link className="service-selection-btn" to="/dashboard/airtime">
+            <Link className="service-selection-btn airtime" to="/dashboard/airtime">
               <i className="fa fa-sim-card" />
               <span>Airtime</span>
             </Link>
@@ -49,7 +49,7 @@ export function DashbaordScreen({}) {
             horizontalInsetPadding={0}
             verticalInsetPadding={0}
           >
-            <Link className="service-selection-btn" to="/dashboard/data">
+            <Link className="service-selection-btn data" to="/dashboard/data">
               <i className="fa fa-sim-card" />
               <span>Data</span>
             </Link>
